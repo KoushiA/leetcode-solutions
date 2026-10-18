@@ -9,14 +9,9 @@ class Solution {
                 if(count==k){
                     return i;
                 }
-                else
                 i++;
             }
         }
-        while(count!=k){
-            count++;
-            i++;
-        }
-        return i;
-    }
+        return arr[arr.length-1]+(k-count);
+            }
 }
