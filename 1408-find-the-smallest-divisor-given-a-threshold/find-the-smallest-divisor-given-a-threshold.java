@@ -1,9 +1,10 @@
 class Solution {
-    int check(int[] nums,int div){
+    int check(int[] nums,int threshold,int div){
           int sum=0;
         for(int i=0;i<nums.length;i++){
         int division=(int)Math.ceil((double)nums[i]/div);
         sum=sum+division;
+        if(sum>threshold) break;
         }
         return sum;
     }
@@ -17,7 +18,7 @@ class Solution {
         }
         while(low<high){
             int mid=low+(high-low)/2;
-            int result=check(nums,mid);
+            int result=check(nums,threshold,mid);
             if(result<=threshold){
                 high=mid;
             }
